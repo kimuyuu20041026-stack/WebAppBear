@@ -6,19 +6,19 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
+    //住民用ログイン画面
     public function show()
     {
         return view('login');
     }
 
-    public function login(Request $request)
+    //今回は確認用に"/login"を入れれば見れるように。
+    //のちにloginと紐づけしなければならない
+    //住民用システム画面
+    public function login()
     {
-        $request->validate([
-            'email'    => 'required|email',
-            'password' => 'required|min:6',
-        ]);
-
-        // 仮処理（本来は認証）
-        return redirect('/')->with('status', 'ログイン成功');
+        return view('residentUI');
     }
+
+
 }
