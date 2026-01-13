@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('user_id')
                     ->constrained('user_table')
                     ->onDelete('cascade');
-            $table->integer('number');
-            $table->string('place');//場所参照。のちに変える
+            $table->decimal('latitude', 10, 7);
+            $table->decimal('longitude', 10, 7);
             $table->string('text');
             $table->integer('money');
             $table->timestamps();
