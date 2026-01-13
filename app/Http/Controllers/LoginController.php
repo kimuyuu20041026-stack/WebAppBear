@@ -40,6 +40,8 @@ class LoginController extends Controller
             // roleに応じたリダイレクト
             if ($role === '自治体' || $role === 'municipality') {
                 return redirect()->route('municipality.index');
+            } else if ($role === 'hunter') {
+                return redirect()->route('hunter.index');
             } else {
                 // 住民（resident）またはその他のroleの場合
                 return redirect()->route('login');
