@@ -10,6 +10,8 @@ Route::get('/', [LoginController::class, 'show']);
 //住民用システムUIで利用するもの。今回は見れるように利用してないが、Route::middleware(['auth'])->group(function () 
 //などの認証が必要なものを利用する必要がある
 Route::get('/login', [LoginController::class, 'login'])->name('login');
+// ログイン認証処理（POST）
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login.authenticate');
 // 熊の通報
 Route::post('/bear/report', [InfoController::class, 'store'])->name('bear.report.store');
 // チャット
