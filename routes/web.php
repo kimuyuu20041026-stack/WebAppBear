@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\MunicipalityController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LoginController::class, 'show']);
@@ -27,3 +28,7 @@ Route::post('/municipality/hunting-requests', [MunicipalityController::class, 's
 // チャット
 Route::post('/municipality/chat/{threadId}/message', [MunicipalityController::class, 'sendMessage'])->name('municipality.chat.send');
 
+//猟友会用,後でhunterに変更
+Route::get('/hunter', [OrderController::class, 'index'])->name('order.index');
+// Route::post('/order/{order}/accept', [OrderController::class, 'accept'])->name('order.accept');
+// Route::post('/order/{order}/reject', [OrderController::class, 'reject'])->name('order.reject');
